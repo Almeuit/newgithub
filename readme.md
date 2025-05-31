@@ -34,7 +34,7 @@
 3.  **Follow Prompts**:
 
     * Enter the path to the directory you want to initialize as a Git repository (if not using `--current`).
-    * Enter the GitHub repository URL (e.g., `https://github.com/username/repo.git`).
+    * Enter the GitHub repository URL (e.g., `git@github.com:Almeuit/newrepo.git).
 
 4.  **Result**: The script will:
 
