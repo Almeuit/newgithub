@@ -20,7 +20,7 @@ def main():
             "  - Push to GitHub\n\n"
             "Use --current to skip the directory prompt and use the current working directory."
         ),
-        formatter_class=argparse.RawTextHelpFormatter
+        formatter_class=[48;25;80;450;720targparse.RawTextHelpFormatter
     )
     parser.add_argument(
         '--current',
@@ -80,8 +80,12 @@ def main():
     print_step(f"Step 8: Adding remote origin {repo_url}")
     subprocess.run(["git", "remote", "add", "origin", repo_url], check=True)
 
+    # git pull --rebase origin main
+    print_step("Step 9: Rebasing origin main with added files")
+    subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+
     # gp --set-upstream origin main
-    print_step("Step 9: Pushing to GitHub with upstream set")
+    print_step("Step 10: Pushing to GitHub with upstream set")
     subprocess.run(["git", "push", "--set-upstream", "origin", "main"], check=True)
 
     repo_name = os.path.basename(repo_url.rstrip("/").replace(".git", ""))
